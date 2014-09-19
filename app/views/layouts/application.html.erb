@@ -15,39 +15,31 @@
   </head>
 
   <body>
-		<nav class='top-bar'>
-			<ul class='title-area'>
-				<li class='name'>
-					<h1><%= link_to 'Zurbify', products_path %>
-				</li>
-			</ul>
-			<section class='top-bar-section'>
-				<ul class='right'>
-					<li class='divider'></li>
-					<li><%= link_to 'Mens' %></li>
-					<li class='divider'></li>
-					<li><%= link_to 'Womens' %></li>
-					<li class='divider'></li>
-					<li><%= link_to 'Kids' %></li>
-					<li class='divider'></li>
-					<li><%= link_to 'Cart' %></li>
-				</ul>
-			</section>
-		</nav>
-	
+		
+		<%= render 'shared/top_bar' %>
+
 		<%= render 'shared/flash' %>
 	
-		<div class='row'>
-			<div class='large-12 columns'>
-				<%= yield %>
+		<div id='product-splash' class='text-center'>
+			<h1>Zurbify</h1>
+			<h2><small>What can we say? We sell quality</small></h2>
+			<div class='row'>
+				<p>Our team of engineers & designers have crafted some of the most advanced products you'll never dream of</p>
+			</div>
+		</div>
+	
+		<div class='panel'>
+			<div class='row text-center'>
+				<h3><small>Want to create a new product?</small></h3>
+				<%= link_to 'Create a new product', new_product_path, class: 'button round' %>
 			</div>
 		</div>
 		
-		<div class='row'>
-			<h1><small>About us</small></h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae laoreet justo. Etiam at fermentum leo. Cras consectetur nunc sed lorem suscipit, non feugiat nibh varius.</p>
-		</div>
-
+		<%= yield %>
+		
+		
+		<%= render 'shared/footer' %>
+		
     <%= javascript_include_tag "application" %>
   </body>
 </html>
