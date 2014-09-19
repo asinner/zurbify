@@ -11,15 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class='row'>
+		<div class='small-3 columns'>
+			<%= f.label :name, class: 'right inline' %>			
+		</div>
+		<div class='small-5 columns'>
+			<%= f.text_field :name, class: 'right inline' %>			
+		</div>
+	</div>
+	
+	<div class='row'>
+		<div class='small-3 columns'>
+			<%= f.label :price, class: 'right inline' %>
+		</div>
+		<div class='small-5 columns'>
+			<%= f.text_field :price, class: 'right inline' %>			
+		</div>
+	</div>
+	
+	<div class='row'>
+		<div class='small-5 small-offset-5 columns'>
+			<%= f.submit nil, class: 'button tiny radius round' %>
+		</div>
+	</div>
+
+
 <% end %>

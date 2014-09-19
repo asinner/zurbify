@@ -12,8 +12,36 @@
   </head>
 
   <body>
+		<nav class='top-bar'>
+			<ul class='title-area'>
+				<li class='name'>
+					<h1><%= link_to 'Zurbify', products_path %>
+				</li>
+			</ul>
+			<section class='top-bar-section'>
+				<ul class='right'>
+					<li class='divider'></li>
+					<li><%= link_to 'Mens' %></li>
+					<li class='divider'></li>
+					<li><%= link_to 'Womens' %></li>
+					<li class='divider'></li>
+					<li><%= link_to 'Kids' %></li>
+					<li class='divider'></li>
+					<li><%= link_to 'Cart' %></li>
+				</ul>
+			</section>
+		</nav>
+	
+		<div class='row'>
+			<div class='large-5 columns'>
+				<%= yield %>
+			</div>
+			<div class='large-3 columns'>
+				<h2><small>About us</small></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod finibus ligula, vitae auctor eros porttitor a. Aliquam erat volutpat. In fringilla vulputate ultricies. Proin ultrices mi nec euismod facilisis. Quisque a mi purus. Cras convallis ipsum in condimentum consectetur. Integer ac felis id urna maximus pellentesque a vitae ipsum. Mauris in diam a sem mollis porta.</p>
+			</div>
+		</div>
 
-    <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
