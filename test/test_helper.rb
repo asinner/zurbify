@@ -10,10 +10,13 @@ require "minitest/rails/capybara"
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
-class ActiveSupport::TestCase
-    ActiveRecord::Migration.check_pending!
+# Ensure hidden elements are accessible
+Capybara.ignore_hidden_elements = false
 
-    # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
+class ActiveSupport::TestCase
+  ActiveRecord::Migration.check_pending!
+  
+  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting

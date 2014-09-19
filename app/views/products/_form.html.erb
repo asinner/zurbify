@@ -1,39 +1,43 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div row>
+	<div class='large-4'>
+		<%= form_for(@product) do |f| %>
+		  <% if @product.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+		      <ul>
+		      <% @product.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
 
-	<div class='row'>
-		<div class='small-3 columns'>
-			<%= f.label :name, class: 'right inline' %>			
-		</div>
-		<div class='small-5 columns'>
-			<%= f.text_field :name, class: 'right inline' %>			
-		</div>
+			<div class='row'>
+				<div class='small-3 columns'>
+					<%= f.label :name, class: 'right inline' %>			
+				</div>
+				<div class='small-5 columns'>
+					<%= f.text_field :name, class: 'right inline', title: 'Please give your product a name', data: { tooltip: true } %>			
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='small-3 columns'>
+					<%= f.label :price, class: 'right inline' %>
+				</div>
+				<div class='small-5 columns'>
+					<%= f.text_field :price, class: 'right inline', title: 'Price your product', data: { tooltip: true } %>			
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='small-5 small-offset-5 columns'>
+					<%= f.submit nil, class: 'button tiny radius round' %>
+				</div>
+			</div>
+
+		<% end %>
+		
 	</div>
-	
-	<div class='row'>
-		<div class='small-3 columns'>
-			<%= f.label :price, class: 'right inline' %>
-		</div>
-		<div class='small-5 columns'>
-			<%= f.text_field :price, class: 'right inline' %>			
-		</div>
-	</div>
-	
-	<div class='row'>
-		<div class='small-5 small-offset-5 columns'>
-			<%= f.submit nil, class: 'button tiny radius round' %>
-		</div>
-	</div>
-
-
-<% end %>
+</div>
